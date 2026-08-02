@@ -17,8 +17,14 @@ import Link from 'next/link';
 import { createRentalHome } from '../actions';
 
 const UserNav = async () => {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
+  let user: any = null;
+
+  try {
+    const { getUser } = getKindeServerSession();
+    user = await getUser();
+  } catch {
+    user = null;
+  }
   const createHomeWithId = createRentalHome.bind(null, {
     userId: user?.id as string,
   });

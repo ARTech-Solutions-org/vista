@@ -70,9 +70,22 @@ export default function Home({
 }
 
 async function ShowRentalHomes({ searchParams }: SearchParams) {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
-  const data = await getData({ searchParams, userId: user?.id });
+  let user: any = null;
+
+  try {
+    const { getUser } = getKindeServerSession();
+    user = await getUser();
+  } catch {
+    user = null;
+  }
+
+  let data: any[] = [];
+
+  try {
+    data = await getData({ searchParams, userId: user?.id });
+  } catch {
+    data = [];
+  }
 
   return (
     <>
