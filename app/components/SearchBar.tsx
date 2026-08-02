@@ -33,7 +33,7 @@ const SearchBar = () => {
   const [locationValue, setLocationValue] = useState('');
   const { getAllCountries } = useCountries();
   const countries = getAllCountries();
-  const featuredCountries = countries.slice(0, 6);
+  const featuredCountries = countries.slice(0, 8);
 
   return (
     <Dialog>

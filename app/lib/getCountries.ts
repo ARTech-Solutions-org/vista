@@ -139,6 +139,196 @@ const egyptLocations: EgyptLocation[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
   },
+  {
+    value: 'marsa-matruh',
+    label: 'Marsa Matruh',
+    flag: '🇪🇬',
+    latLang: [31.3543, 27.2373],
+    region: 'Egypt',
+    subRegion: 'North Coast',
+    imageUrl:
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'new-alamein',
+    label: 'New Alamein',
+    flag: '🇪🇬',
+    latLang: [30.8173, 28.9556],
+    region: 'Egypt',
+    subRegion: 'North Coast',
+    imageUrl:
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'ras-sudr',
+    label: 'Ras Sudr',
+    flag: '🇪🇬',
+    latLang: [29.5418, 32.7177],
+    region: 'Egypt',
+    subRegion: 'South Sinai',
+    imageUrl:
+      'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'taba',
+    label: 'Taba',
+    flag: '🇪🇬',
+    latLang: [29.4921, 34.8957],
+    region: 'Egypt',
+    subRegion: 'South Sinai',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'marsa-alam',
+    label: 'Marsa Alam',
+    flag: '🇪🇬',
+    latLang: [25.0676, 34.8786],
+    region: 'Egypt',
+    subRegion: 'Red Sea',
+    imageUrl:
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'sahl-hasheesh',
+    label: 'Sahl Hasheesh',
+    flag: '🇪🇬',
+    latLang: [27.0970, 33.8520],
+    region: 'Egypt',
+    subRegion: 'Red Sea',
+    imageUrl:
+      'https://images.unsplash.com/photo-1564078516393-cf04bd966897?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'maadi',
+    label: 'Maadi',
+    flag: '🇪🇬',
+    latLang: [29.9602, 31.2569],
+    region: 'Egypt',
+    subRegion: 'Greater Cairo',
+    imageUrl:
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'zamalek',
+    label: 'Zamalek',
+    flag: '🇪🇬',
+    latLang: [30.0646, 31.2236],
+    region: 'Egypt',
+    subRegion: 'Greater Cairo',
+    imageUrl:
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'downtown-cairo',
+    label: 'Downtown Cairo',
+    flag: '🇪🇬',
+    latLang: [30.0444, 31.2357],
+    region: 'Egypt',
+    subRegion: 'Central Cairo',
+    imageUrl:
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'sheikh-zayed',
+    label: 'Sheikh Zayed',
+    flag: '🇪🇬',
+    latLang: [30.0540, 30.9720],
+    region: 'Egypt',
+    subRegion: 'Greater Cairo',
+    imageUrl:
+      'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: '6th-of-october',
+    label: '6th of October',
+    flag: '🇪🇬',
+    latLang: [29.9380, 30.9120],
+    region: 'Egypt',
+    subRegion: 'Greater Cairo',
+    imageUrl:
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'mansoura',
+    label: 'Mansoura',
+    flag: '🇪🇬',
+    latLang: [31.0409, 31.3785],
+    region: 'Egypt',
+    subRegion: 'Delta',
+    imageUrl:
+      'https://images.unsplash.com/photo-1502209877429-d7c6df9eb3f9?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'tanta',
+    label: 'Tanta',
+    flag: '🇪🇬',
+    latLang: [30.7865, 31.0004],
+    region: 'Egypt',
+    subRegion: 'Delta',
+    imageUrl:
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'asyut',
+    label: 'Asyut',
+    flag: '🇪🇬',
+    latLang: [27.1800, 31.1837],
+    region: 'Egypt',
+    subRegion: 'Upper Egypt',
+    imageUrl:
+      'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'qena',
+    label: 'Qena',
+    flag: '🇪🇬',
+    latLang: [26.1551, 32.7160],
+    region: 'Egypt',
+    subRegion: 'Upper Egypt',
+    imageUrl:
+      'https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'beni-suef',
+    label: 'Beni Suef',
+    flag: '🇪🇬',
+    latLang: [29.0661, 31.0994],
+    region: 'Egypt',
+    subRegion: 'Middle Egypt',
+    imageUrl:
+      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'minya',
+    label: 'Minya',
+    flag: '🇪🇬',
+    latLang: [28.1099, 30.7503],
+    region: 'Egypt',
+    subRegion: 'Middle Egypt',
+    imageUrl:
+      'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'kafr-el-sheikh',
+    label: 'Kafr El Sheikh',
+    flag: '🇪🇬',
+    latLang: [31.1118, 30.9396],
+    region: 'Egypt',
+    subRegion: 'Delta',
+    imageUrl:
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    value: 'suez',
+    label: 'Suez',
+    flag: '🇪🇬',
+    latLang: [29.9668, 32.5498],
+    region: 'Egypt',
+    subRegion: 'Canal Cities',
+    imageUrl:
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80',
+  },
 ];
 
 export const useCountries = () => {
