@@ -1,0 +1,186 @@
+export type EgyptHome = {
+  id: string;
+  title: string;
+  description: string;
+  guests: string;
+  bedrooms: string;
+  bathrooms: string;
+  country: string;
+  photo: string;
+  price: number;
+  categoryName: string;
+};
+
+export const egyptHomes: EgyptHome[] = [
+  {
+    id: 'egypt-home-cairo-zamalek',
+    title: 'Nile View Apartment in Zamalek',
+    description:
+      'Bright riverside stay with a balcony, calm interiors, and quick access to cafes and galleries.',
+    guests: '4',
+    bedrooms: '2',
+    bathrooms: '2',
+    country: 'cairo',
+    photo:
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
+    price: 3200,
+    categoryName: 'nileView',
+  },
+  {
+    id: 'egypt-home-cairo-old-city',
+    title: 'Historic Flat Near Old Cairo',
+    description:
+      'Character-filled home close to mosques, markets, and the oldest streets in the city.',
+    guests: '3',
+    bedrooms: '1',
+    bathrooms: '1',
+    country: 'cairo',
+    photo:
+      'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80',
+    price: 2100,
+    categoryName: 'historic',
+  },
+  {
+    id: 'egypt-home-alexandria-sea-breeze',
+    title: 'Sea Breeze Villa in Alexandria',
+    description:
+      'Large airy villa with Mediterranean energy and sunset walks along the corniche.',
+    guests: '6',
+    bedrooms: '3',
+    bathrooms: '3',
+    country: 'alexandria',
+    photo:
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    price: 4100,
+    categoryName: 'seaBreeze',
+  },
+  {
+    id: 'egypt-home-siwa-desert-escape',
+    title: 'Desert Escape in Siwa Oasis',
+    description:
+      'Minimal retreat with palm views, quiet nights, and a natural spring atmosphere.',
+    guests: '2',
+    bedrooms: '1',
+    bathrooms: '1',
+    country: 'siwa',
+    photo:
+      'https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1200&q=80',
+    price: 1800,
+    categoryName: 'desertEscape',
+  },
+  {
+    id: 'egypt-home-el-gouna-pool',
+    title: 'Luxury Pool Stay in El Gouna',
+    description:
+      'Designer villa with private pool, lagoon calm, and a premium Red Sea setting.',
+    guests: '8',
+    bedrooms: '4',
+    bathrooms: '4',
+    country: 'el-gouna',
+    photo:
+      'https://images.unsplash.com/photo-1564078516393-cf04bd966897?auto=format&fit=crop&w=1200&q=80',
+    price: 8500,
+    categoryName: 'pool',
+  },
+  {
+    id: 'egypt-home-dahab-loft',
+    title: 'Dahab Beach Loft',
+    description:
+      'Relaxed loft for divers and remote workers with a laid-back South Sinai mood.',
+    guests: '3',
+    bedrooms: '1',
+    bathrooms: '1',
+    country: 'dahab',
+    photo:
+      'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80',
+    price: 2600,
+    categoryName: 'redSea',
+  },
+  {
+    id: 'egypt-home-hurghada-sunset',
+    title: 'Sunset Apartment in Hurghada',
+    description:
+      'Affordable seaside apartment with wide-open views and easy beach access.',
+    guests: '5',
+    bedrooms: '2',
+    bathrooms: '2',
+    country: 'hurghada',
+    photo:
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    price: 2400,
+    categoryName: 'sunset',
+  },
+  {
+    id: 'egypt-home-luxor-heritage',
+    title: 'Heritage House in Luxor',
+    description:
+      'Warm heritage home close to temples, with a classic Upper Egypt feel.',
+    guests: '4',
+    bedrooms: '2',
+    bathrooms: '2',
+    country: 'luxor',
+    photo:
+      'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80',
+    price: 1950,
+    categoryName: 'heritage',
+  },
+  {
+    id: 'egypt-home-new-cairo-design',
+    title: 'Design Stay in New Cairo',
+    description:
+      'Modern minimalist apartment with a polished layout and strong city access.',
+    guests: '2',
+    bedrooms: '1',
+    bathrooms: '1',
+    country: 'cairo',
+    photo:
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80',
+    price: 3000,
+    categoryName: 'design',
+  },
+  {
+    id: 'egypt-home-fayoum-oasis',
+    title: 'Oasis Cabin in Fayoum',
+    description:
+      'Rustic cabin with desert calm, palm trees, and a slow-travel weekend vibe.',
+    guests: '3',
+    bedrooms: '1',
+    bathrooms: '1',
+    country: 'fayoum',
+    photo:
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+    price: 1700,
+    categoryName: 'oasis',
+  },
+  {
+    id: 'egypt-home-ain-sokhna-retreat',
+    title: 'Ain Sokhna Weekend Retreat',
+    description:
+      'Easy escape for short stays on the coast with a spacious terrace and relaxed layout.',
+    guests: '6',
+    bedrooms: '3',
+    bathrooms: '2',
+    country: 'ain-sokhna',
+    photo:
+      'https://images.unsplash.com/photo-1502209877429-d7c6df9eb3f9?auto=format&fit=crop&w=1200&q=80',
+    price: 3800,
+    categoryName: 'luxe',
+  },
+  {
+    id: 'egypt-home-port-said-compact',
+    title: 'Port Said Compact Apartment',
+    description:
+      'Compact city apartment near the canal city center, markets, and the waterfront.',
+    guests: '2',
+    bedrooms: '1',
+    bathrooms: '1',
+    country: 'port-said',
+    photo:
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80',
+    price: 1600,
+    categoryName: 'tiny',
+  },
+];
+
+export const getEgyptHomeById = (id: string) =>
+  egyptHomes.find((home) => home.id === id);

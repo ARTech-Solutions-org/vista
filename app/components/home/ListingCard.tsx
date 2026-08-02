@@ -1,4 +1,5 @@
 import { useCountries } from '@/app/lib/getCountries';
+import { getHomeImageUrl } from '@/app/lib/getHomeImageUrl';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -46,7 +47,7 @@ const ListingCard = ({
     <div className="flex flex-col gap-y-2">
       <div className="relative h-72">
         <Image
-          src={`https://glwjdwtkbgtpdembqjlt.supabase.co/storage/v1/object/public/images/${imagePath}`}
+          src={getHomeImageUrl(imagePath)}
           alt="home image"
           fill
           className="rounded-lg h-full object-cover mb-2"

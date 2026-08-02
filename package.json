@@ -9,6 +9,9 @@
     "lint": "next lint",
     "postinstall": "prisma generate"
   },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "dependencies": {
     "@kinde-oss/kinde-auth-nextjs": "^2.1.15",
     "@prisma/client": "^5.10.2",

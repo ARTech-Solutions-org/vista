@@ -6,6 +6,7 @@ import LoadingSkeleton from './components/LoadingSkeleton';
 import NoItem from './components/home/NoItem';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { unstable_noStore as noStore } from 'next/cache';
+import { egyptHomes } from './lib/egyptHomes';
 
 interface SearchParams {
   searchParams?: {
@@ -20,32 +21,53 @@ interface SearchParams {
 
 async function getData({ searchParams, userId }: SearchParams) {
   noStore();
-  const data = await prisma.home.findMany({
-    where: {
-      addedCategory: true,
-      addedDescription: true,
-      addedLocation: true,
-      categoryName: searchParams?.filter ?? undefined,
-      country: searchParams?.country ?? undefined,
-      guests: searchParams?.guestCounter ?? undefined,
-      bedrooms: searchParams?.roomCounter ?? undefined,
-      bathrooms: searchParams?.bathroomCounter ?? undefined,
-    },
-    select: {
-      photo: true,
-      id: true,
-      price: true,
-      description: true,
-      country: true,
-      Favourite: {
-        where: {
-          userId: userId ?? undefined,
+  try {
+    const data = await prisma.home.findMany({
+      where: {
+        addedCategory: true,
+        addedDescription: true,
+        addedLocation: true,
+        categoryName: searchParams?.filter ?? undefined,
+        country: searchParams?.country ?? undefined,
+        guests: searchParams?.guestCounter ?? undefined,
+        bedrooms: searchParams?.roomCounter ?? undefined,
+        bathrooms: searchParams?.bathroomCounter ?? undefined,
+      },
+      select: {
+        photo: true,
+        id: true,
+        price: true,
+        description: true,
+        country: true,
+        Favourite: {
+          where: {
+            userId: userId ?? undefined,
+          },
         },
       },
-    },
-  });
+    });
 
-  return data;
+    if (data.length > 0) {
+      return data;
+    }
+  } catch {
+    // fall back to static Egyptian data below
+  }
+
+  return egyptHomes
+    .filter((home) => !searchParams?.filter || home.categoryName === searchParams.filter)
+    .filter((home) => !searchParams?.country || home.country === searchParams.country)
+    .filter((home) => !searchParams?.guestCounter || home.guests === searchParams.guestCounter)
+    .filter((home) => !searchParams?.roomCounter || home.bedrooms === searchParams.roomCounter)
+    .filter((home) => !searchParams?.bathroomCounter || home.bathrooms === searchParams.bathroomCounter)
+    .map((home) => ({
+      photo: home.photo,
+      id: home.id,
+      price: home.price,
+      description: home.description,
+      country: home.country,
+      Favourite: [],
+    }));
 }
 
 export default function Home({
@@ -79,13 +101,7 @@ async function ShowRentalHomes({ searchParams }: SearchParams) {
     user = null;
   }
 
-  let data: any[] = [];
-
-  try {
-    data = await getData({ searchParams, userId: user?.id });
-  } catch {
-    data = [];
-  }
+  const data: any[] = await getData({ searchParams, userId: user?.id });
 
   return (
     <>

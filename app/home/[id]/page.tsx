@@ -12,40 +12,74 @@ import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import { unstable_noStore as noStore } from 'next/cache';
+import { getHomeImageUrl } from '@/app/lib/getHomeImageUrl';
+import { getEgyptHomeById } from '@/app/lib/egyptHomes';
 
 async function getHomeData(homeId: string) {
   noStore();
-  const data = await prisma.home.findUnique({
-    where: {
-      id: homeId,
-    },
-    select: {
-      photo: true,
-      description: true,
-      guests: true,
-      bedrooms: true,
-      bathrooms: true,
-      price: true,
-      title: true,
-      categoryName: true,
-      country: true,
-      createdAT: true,
-      Reservation: {
-        where: {
-          homeId,
+  try {
+    const data = await prisma.home.findUnique({
+      where: {
+        id: homeId,
+      },
+      select: {
+        photo: true,
+        description: true,
+        guests: true,
+        bedrooms: true,
+        bathrooms: true,
+        price: true,
+        title: true,
+        categoryName: true,
+        country: true,
+        createdAT: true,
+        Reservation: {
+          where: {
+            homeId,
+          },
+        },
+        User: {
+          select: {
+            id: true,
+            firstName: true,
+            profileImage: true,
+          },
         },
       },
-      User: {
-        select: {
-          id: true,
-          firstName: true,
-          profileImage: true,
-        },
-      },
-    },
-  });
+    });
 
-  return data;
+    if (data) {
+      return data;
+    }
+  } catch {
+    // use static fallback below
+  }
+
+  const fallbackHome = getEgyptHomeById(homeId);
+
+  if (!fallbackHome) {
+    return null;
+  }
+
+  return {
+    photo: fallbackHome.photo,
+    description: fallbackHome.description,
+    guests: fallbackHome.guests,
+    bedrooms: fallbackHome.bedrooms,
+    bathrooms: fallbackHome.bathrooms,
+    price: fallbackHome.price,
+    title: fallbackHome.title,
+    categoryName: fallbackHome.categoryName,
+    country: fallbackHome.country,
+    createdAT: new Date(),
+    Reservation: [],
+    User: {
+      id: 'demo-host',
+      firstName: 'Vista',
+      profileImage:
+        'https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg',
+    },
+  };
 }
 
 const getYear = (createdAt: Date) => {
@@ -73,7 +107,7 @@ const IndividualHomePage = async ({
       </h1>
       <div className="relative h-[550px]">
         <Image
-          src={`https://glwjdwtkbgtpdembqjlt.supabase.co/storage/v1/object/public/images/${homeData?.photo}`}
+          src={getHomeImageUrl(homeData?.photo)}
           alt="home image"
           fill
           className="rounded-lg h-full object-cover w-full"
