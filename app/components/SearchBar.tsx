@@ -25,12 +25,15 @@ import HomeMap from './HomeMap';
 import SearchBarSubmitButton from './SearchBarSubmitButton';
 import { Card, CardHeader } from '@/components/ui/card';
 import Counter from './Counter';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 const SearchBar = () => {
   const [step, setStep] = useState(1);
   const [locationValue, setLocationValue] = useState('');
   const { getAllCountries } = useCountries();
   const countries = getAllCountries();
+  const featuredCountries = countries.slice(0, 6);
 
   return (
     <Dialog>
@@ -55,6 +58,37 @@ const SearchBar = () => {
                   Pick a city, coast, or desert stay
                 </DialogDescription>
               </DialogHeader>
+
+              <div className="grid grid-cols-2 gap-3">
+                {featuredCountries.map((country) => (
+                  <button
+                    key={country.value}
+                    type="button"
+                    onClick={() => setLocationValue(country.value)}
+                    className={cn(
+                      'group overflow-hidden rounded-2xl border text-left transition hover:-translate-y-0.5 hover:shadow-md',
+                      locationValue === country.value && 'ring-2 ring-black'
+                    )}
+                  >
+                    <div className="relative h-24 w-full">
+                      <Image
+                        src={country.imageUrl}
+                        alt={country.label}
+                        fill
+                        className="object-cover transition duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
+                    </div>
+                    <div className="p-2">
+                      <p className="text-sm font-medium leading-none">{country.label}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {country.subRegion}
+                      </p>
+                    </div>
+                  </button>
+                ))}
+              </div>
+
               <Select
                 required
                 onValueChange={(value) => setLocationValue(value)}
